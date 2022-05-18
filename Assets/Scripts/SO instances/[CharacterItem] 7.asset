@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b83d2dd386885d74b9127f395f22f36b, type: 3}
   m_Name: '[CharacterItem] 7'
   m_EditorClassIdentifier: 
-  m_Id: 01_1
-  m_Sprite: {fileID: 21300002, guid: b08e570699f1c8a4f9cc388204aef3bc, type: 3}
+  m_Id: 01_7
+  m_Sprite: {fileID: 21300014, guid: b08e570699f1c8a4f9cc388204aef3bc, type: 3}
