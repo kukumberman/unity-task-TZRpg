@@ -12,6 +12,9 @@ namespace Cucumba
         [SerializeField] private Button m_RandomizeButton = null;
 
         [Inject]
+        private SignalBus m_SignalBus = null;
+
+        [Inject]
         private ICharacterRandomizer m_CharacterRandomizer = null;
 
         [Inject]
@@ -26,7 +29,10 @@ namespace Cucumba
         {
             CharacterItem randomizedItem = m_CharacterRandomizer.Randomize();
 
+            // better to move this line into non-existing "save context" and listen for the signal
             m_PlayerProfile.SelectedCharacterId = randomizedItem.Id;
+
+            m_SignalBus.Fire(new CharacterChangedSignal() { Item = randomizedItem });
         }
     }
 }

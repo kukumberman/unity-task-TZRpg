@@ -12,6 +12,13 @@ namespace Cucumba
 
         public override void InstallBindings()
         {
+            // should i call it here?
+            LoadPlayerData();
+
+            SignalBusInstaller.Install(Container);
+
+            Container.DeclareSignal<CharacterChangedSignal>();
+
             Container
                 .BindInstance(m_CharactersStorage)
                 .AsSingle();
@@ -24,10 +31,6 @@ namespace Cucumba
             Container
                 .BindInterfacesAndSelfTo<SimpleCharacterRandomizer>()
                 .AsSingle();
-            
-
-            // should i call it here?
-            LoadPlayerData();
         }
 
         private void LoadPlayerData()
